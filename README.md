@@ -26,6 +26,10 @@ Credits are given to the following:
 
 * AskBCS and their array of assistants that helped me out with technical questions when they arose.
 
-*JQuery for usage of their [API](https://jquery.com/)
+* JQuery for usage of their [API](https://jquery.com/)
 
-*DayJS for usage of their [API](https://day.js.org/)
+* DayJS for usage of their [API](https://day.js.org/)
+
+## License
+
+Please refer to the LICENSE found in the repository.
