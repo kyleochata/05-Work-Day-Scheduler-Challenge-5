@@ -5,14 +5,13 @@ $(document).ready (function () {
   saveBtn.on('click', function() {
     var item = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
-    console.log(time);
     localStorage.setItem(time, item);
   });
 
 //getting current time and date
   var today = dayjs();
 
-
+  //setting background color according to current hour
   const timeCheck = () => {
     //only grabbing the hour of the current time
     let hour = today.hour();
@@ -21,10 +20,8 @@ $(document).ready (function () {
     $('.time-block').each(function(){
       //turn the id into an array of strings
       let arrHourID = $(this).attr('id').split("-", [2]);
-      console.log(arrHourID);
       //string to number
       arrHourID = parseInt(arrHourID[1]);
-      console.log(arrHourID);
       //if conditions to set the background colors
       if (hour === arrHourID) {
         $(this).removeClass('past');
@@ -44,7 +41,6 @@ $(document).ready (function () {
   }
 
 //set textarea to last saved entry if any. Specifies which text areas to target and with what saved item.
-
 $('#hour-9 .description').val(localStorage.getItem('hour-9'));
 $('#hour-10 .description').val(localStorage.getItem('hour-10'));
 $('#hour-11 .description').val(localStorage.getItem('hour-11'));
@@ -57,7 +53,7 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
 
 //Display date and time at the header
-  $('#currentDay').text(today.format('dddd, MMM D YYYY [at] hh:mm:ss a'));
+  $('#currentDay').text(today.format('dddd, MMM D YYYY'));
 
   //call timeCheck fxn to run once CSS loads
   timeCheck();
